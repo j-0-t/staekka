@@ -1,0 +1,140 @@
+# system files
+/etc/passwd||default unix passwd|:text
+/etc/shadow||password hashes|:text
+/etc/fstab||unix config (might contain passwords)|:text
+/etc/group||unix config|:text
+/etc/master.passwd ||unix password hashes|:text
+/etc/security/passwd||unix password hashes|:text
+/etc/gshadow||unix config  (might contain passwords)|:text
+/etc/secrets||unix config (might contain passwords)|:text
+/etc/sudoers||unix config|:text
+/etc/hosts||unix config|:text
+/etc/samba/private/smbpasswd||unix config (might contain passwords)|:data
+/usr/local/etc/samba/private/smbpasswd||unix config (might contain passwords)|:data
+/etc/d_passwd||unix config (might contain passwords)|:text
+/etc/shadow-||unix config (might contain passwords)|:text
+/etc/tripwire/site.key||unix config|:data
+/etc/nessus/nessus-fetch.rc||unix config|:text
+/etc/socks/tsocks.conf||unix config|:text
+/etc/secrets||unix config|:text
+/etc/nagios/nsca.cfg||unix config|:text
+/etc/nagios/send_nsca.cfg||unix config|:text
+/usr/sbin/john.pot||unix config|:text
+/etc/grsec/pw||unix config|:text
+/etc/proxychains.conf||unix config|:text
+# home files
+~/.bashrc||shell config|:text
+~/.bash_history||history file|:text
+~/.sh_history||history file|:text
+~/.history||history file|:text
+~/.zsh_history||history file|:text
+~/.ash_history||history file|:text
+~/.php_history||history file|:text
+~/.mysql_history||history file|:text
+~/.sqlite_history||history file|:text
+~/.psql_history||history file|:text
+~/.my.cnf||might contain password(s)|:text
+~/.mc/history||histroty file|:text
+~/.cvspass||might contain password(s)|:text
+~/.ICAClient/appsrv.ini||might contain password(s)|:text
+~/.ICAClient/reg.ini||might contain password(s)|:text
+~/.ICAClient/wfclient.ini||might contain password(s)|:text
+~/.ICAClient/All_Regions.ini||might contain password(s)|:text
+~/.rubyforge/user-config.yml||might contain password(s)|:text
+~/.recently-used||history|:text
+~/.recently-used.xbel||history|:text
+~/.ophcrackrc||might contain password(s)|:text
+~/.LinNeighborhood/preferences||might contain password(s)|:text
+~/.xxe/preferences.properties||might contain password(s)|:text
+~/.vnc/passwd||might contain password(s)|:text
+~/.mono/registry/CurrentUser/software/bobcat/settings/values.xml||might contain password(s)|:text
+~/.halberd/halberd.cfg|||:text
+~/.jbidwatcher/JBidWatch.cfg||might contain password(s)|:text
+~/.opera/typed_history.xml|||:text
+~/.opera/opera.dir|||:text
+~/.advchk/advchk.db|||:data
+~/.netrc||might contain password(s)|:text
+~/.rhosts||might contain password(s)|:text
+~/.shosts||might contain password(s)|:text
+~/.gnupg/secring.gpg|||:data
+~/.gnupg/trustdb.gpg|||:data
+~/.forward||might contain password(s)|:text
+~/.muttrc||might contain password(s)|:text
+~/.esmtprc||might contain password(s)|:text
+~/.pinerc||might contain password(s)|:text
+~/.fetchmailrc||might contain password(s)|:text
+~/.msmtprc||might contain password(s)|:text
+~/.snmp/snmp.conf||might contain password(s)|:text
+~/.gaimrc||might contain password(s)|:text
+~/.bitchxrc||might contain password(s)|:text
+~/.micqrc||might contain password(s)|:text
+~/.sash/sadoor.db|||:data
+~/.sash/sash.conf||might contain password(s)|:text
+~/.sash/sash.db|||:data
+~/.nessusrc|||:text
+~/.nessus.keys|||:data
+~/.paros/options.xml|||:text
+~/.idapro/ida.key|||:text
+~/.pgp/secring.pgp|||:data
+~/.vnc/passwd||might contain password(s)|:text
+~/.ICEauthority||might contain password(s)|:text
+~/.silc/private_key.prv|||:data
+~/.xchat/serverlist.conf||might contain password(s)|:text
+~/.Xauthority|||:text
+~/.cvspass||might contain password(s)|:text
+~/.xchat/servers.conf||might contain password(s)|:text
+~/.xchat2/serverlis_.conf||might contain password(s)|:text
+~/.silky/silky.prv||might contain password(s)|:data
+~/.silky/silky.pub||might contain password(s)|:data
+~/.john/john.pot||might contain password(s)|:text
+~/.netwag.ses||might contain password(s)|:text
+~/.scapy_history||history|:text
+~/.qt/kphonerc||might contain password(s)|:text
+~/.jbidwatcher/JBidWatch.cfg||might contain password(s)|:text
+~/.psi/profiles/default/config.xml||might contain password(s)|:text
+~/.gaim/accounts.xml||might contain password(s)|:text
+~/.torarc||might contain password(s)|:text
+~/anarconda-ks.cfg||might contain password(s)|:text
+~/.openvasrc.cert|||:data
+~/.openvasrc||might contain password(s)|:text
+~/.hgrc||might contain password(s)|:text
+~/WebScarab.properties||might contain password(s)|:text
+~/.ncftp/trace||might contain password(s)|:text
+~/.ncftp/bookmarks||might contain password(s)|:text
+~/.gnupg/.gpg-agent-info|||:text
+~/.jxplorer/connections.txt||might contain password(s)|:text
+~/.lesshst|history||:text
+~/.luma/serverlist.xml||might contain password(s)|:text
+~/.mc/history|history||:text
+~/.msf3/logs/framework.log|||:text
+~/.msf3/logs/msfgui.log|||:text
+~/.msf3/logs/msfweb.log|||:text
+~/.msf3/history|||:text
+~/.msf3/logs/framework.log|||:text
+~/.msf4/history|||:text
+~/.msf4/logs/framework.log|||:text
+~/.wireshark/recent|||:text
+~/.screenrc|||:text
+~/.proxychains/proxychains.conf||might contain password(s)|:text
+~/Plone/zinstance/adminPassword.txt||might contain password(s)|:text
+# ssh
+~/.ssh/identity||SSH|:text
+~/.ssh/id_dsa||SSH Key|:text
+~/.ssh/id_rsa||SSH Key|:text
+~/.ssh/id_ecdsa||SSH Key|:text
+~/.ssh/id_ed25519||SSH Key|:text
+
+
+
+# interssting file names
+passwords.txt||might be interessting|:text
+john.pot|cracked passwords|:text
+.msf3/|metasploit stuff|:text
+.msf4/|metasploit stuff|:text
+
+# ssh
+id_dsa|SSH Key|:text
+id_rsa|SSH Key|:text
+id_ecdsa|SSH Key|:text
+id_ed25519|SSH Key|:text
+

@@ -1,0 +1,12 @@
+/etc/passwd||default unix passwd|:text
+/etc/shadow||password hashes|:text
+/etc/security/opasswd||password hashes|:text
+/etc/nofile||no_file|:text
+/etc/issue||test file|:data
+# home directory
+#~/.bashrc||shell config|:text
+etc/fstab||unix config|:text  # etc/fstab
+/etc/pam.d/||pam config|:text 
+#/etc/pam.d||pam config|:text 
+/home/user/.config/Last.fm/Last.fm.conf||GREP(/\\Password\s*=(.*)/)|:text
+/home/user/.cvechecker.rc||CONFGREP(/dbpass\s*=\s*"(.*)"/)|:text

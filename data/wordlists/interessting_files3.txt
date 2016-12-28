@@ -1,0 +1,174 @@
+############################################################
+# System files
+############################################################
+# password hashes
+/etc/passwd||default unix passwd|:text
+/etc/shadow||password hashes|:text
+/etc/shadow-||password hashes|:text
+/etc/shadow~||password hashes|:text
+/etc/security/passwd||password hashes|:text
+/etc/master.passwd||password hashes|:text
+/.secure/etc/passwd||password hashes|:text
+/etc/spwd.db||password hashes|:text
+/tcb/files/auth||password hashes|:text
+/etc/udb||password hashes|:text
+/etc/gshadow||unix config  (might contain passwords)|:text
+/etc/secrets||unix config (might contain passwords)|:text
+/etc/d_passwd||unix config (might contain passwords)|:text
+/etc/secrets||unix config|:text
+/etc/opasswd||unix config|:text
+/etc/hardened-shadow||hardened shadow|:text
+/root/passwords.txt|ZPanel password file|:text
+# config files
+/etc/fstab||unix config (might contain passwords)|:text
+/etc/group||unix config|:text
+/etc/sudoers||unix config|:text
+/etc/sudoers.d||unix config|:text
+/etc/hosts||unix config|:text
+/etc/grsec/pw||unix config|:data
+/etc/ssh/sshd_config||unix config|:data
+/root/anaconda-ks.cfg||unix config|:data
+/root/ks.cfg||unix config|:data
+/etc/wpa_supplicant/wpa_supplicant.conf||wlan config|:text
+/etc/wpa_supplicant.conf||wlan config|:text
+/usr/local/etc/wpa_supplicant/wpa_supplicant.conf||wlan config|:text
+/usr/local/etc/wpa_supplicant.conf||wlan config|:text
+############################################################
+# Special applications
+############################################################
+/usr/sbin/john.pot||unix config|:text
+/etc/tripwire/site.key||unix config|:data
+/etc/nagios/nsca.cfg||unix config|:text
+/etc/nagios/send_nsca.cfg||unix config|:text
+/etc/aiccu.conf||CONFGREP(/password(.*)/)|:text
+/etc/audisp/zos-remote.conf||CONFGREP(/password\s*=\s*(.*)/)|:text
+/etc/cntlm.conf||CONFGREP(/Password\s*(.*)/)|:text
+/etc/cntlm.conf||CONFGREP(/SOCKS5User.*:(.*)/)|:text
+/etc/conf.d/hsqldb||CONFGREP(/TLS_PASSWORD\s*=\s*(.*)/)|:text
+/etc/conf.d/msfrpcd4.4||CONFGREP(/-P\s*(.*)/)|:text
+/etc/conf.d/openconnect||CONFGREP(/password.*"(.*)"/)|:text
+/etc/conf.d/calibre-server||CONFGREP(/--password\s*(.*?)\s/)|:text
+/etc/conf.d/iodined||CONFGREP(/IODNED_PASSWD.*"(.*)"/)|:text
+/etc/conserver/conserver.passwd||passwords?|:text
+/etc/davfs2/secrets||passwords?|:text
+/etc/conf.d/hsqldb||CONFGREP(/TLS_PASSWORD\s*=\s*(.*)/)|:text
+/etc/conf.d/msfrpcd4.4||CONFGREP(/-P\s*(.*)/)|:text
+/etc/freshclam.conf||CONFGREP(/HTTPProxyPassword\s*(.*)/)|:text
+/etc/GeoIP.conf||CONFGREP(/ProxyUserPassword.*:(.*)/)|:text
+/etc/hostapd/hostapd.conf||CONFGREP(/private_key_passwd.*=(.*)/)|:text
+/etc/hostapd/hostapd.conf||CONFGREP(/wpa_passphrase.*=(.*)/)|:text
+/etc/hostapd/hostapd.eap_user||passwords?|:text
+/etc/hsqldb/sqltool.rc||CONFGREP(/password\s*(.*)/)|:text
+/etc/mono/4.0/web.config||XMLGREP(/password=.*"(.*?)"/)|:text
+/etc/mono/2.0/web.config||XMLGREP(/password=.*"(.*?)"/)|:text
+/etc/mpd.conf||CONFGREP(/password\s*"(.*)"/)|:text
+/etc/mysql/mysqlaccess.conf||CONFGREP(/password'*'(.*)'/)|:text
+/etc/mysql/mysqlaccess.conf||CONFGREP(/spassword'*'(.*)'/)|:text
+/etc/nessus/nessusd.conf||CONFGREP(/pem_password\s*=(.*)/)|:text
+/etc/nikto/nikto.conf||CONFGREP(/PROXYPASS\s*=(.*)/)|:text
+/etc/ntlmaps/server.cfg||CONFGREP(/PASSWORD:(.*)/)|:text
+/etc/postfix/saslpass||CONFGREP(/remtehost\s.*:(.*)/)|:text
+/var/lib/samba/private/smbpasswd||samba passwd|:text
+/etc/screenrc||CONFGREP(/password\s.*(.*)/)|:text
+/etc/vpnc||vpn config|:data
+/etc/vtund.conf||vpn config|:data
+/etc/xrdp/xrdp.ini||CONFGREP(/password.*=(.*)/)|:text
+/etc/sysconfig/rhn/osad-auth.conf||CONFGREP(/password\s*=\s*(.*)/)|:text
+/etc/sysconfig/rhn/osad.conf||CONFGREP(/proxyPassword\s*=\s*(.*)/)|:text
+/etc/sysconfig/rhn/rhncfg-client.conf||CONFGREP(/proxyPassword\s*=\s*(.*)/)|:text
+/etc/sysconfig/rhn/up2date||CONFGREP(/proxyPassword\s*=\s*(.*)/)|:text
+/etc/warnquota.conf||CONFGREP(/LDAP_BINDPW\s*=\s*(.*)/)|:text
+/etc/imq/passfile||passwords?|:data
+############################################################
+# Home files
+############################################################
+# History files
+~/.bash_history||history file|:text
+~/.sh_history||history file|:text
+~/.history||history file|:text
+~/.zsh_history||history file|:text
+~/.csh_history||history file|:text
+~/.tcsh_history||history file|:text
+~/.ksh_history||history file|:text
+~/.ash_history||history file|:text
+~/.php_history||history file|:text
+~/.mysql_history||history file|:text
+~/.sqlite_history||history file|:text
+~/.psql_history||history file|:text
+~/.mc/history||histroty file|:text
+~/.atftp_history||histroty file|:text
+~/.irb_history||histroty file|:text
+~/.pry_history||histroty file|:text
+~/.scapy_history||histroty file|:text
+~/.rush/history||histroty file|:text
+~/.sqlplus_history||history file|:text
+# Password files
+~/.cvspass||might contain password(s)|:text
+~/.john/john.pot||might contain password(s)|:text
+~/.ssh||ssh config/keys|:text
+~/.Xauthority||Auth cookie|:text
+~/.TTauthority||Auth cookie|:text
+# Config files
+~/.netrc||might contain password(s)|:text
+~/.rhosts||might contain password(s)|:text
+~/.shosts||might contain password(s)|:text
+~/.my.cnf||might contain password(s)|:text
+~/.bash_profile||config file|:text
+~/.bashrc||config file|:text
+~/.profile||config file|:text
+~/.login||config file|:text
+~/.zshrc||config file|:text
+~/.kshrc||config file|:text
+~/.tcshrc||config file|:text
+~/.alias||config file|:text
+# Application files
+~/.armitage||metasploit logs|:data
+~/.armitage.prop||GREP(/connect.db_connect.string=(.*)/)|:text
+~/.msf3||metasploit logs|:data
+~/.msf4||metasploit logs|:data
+~/.w3af||pentest logs|:data
+~/.vega||pentest logs|:data
+~/.ronin||pentest logs|:data
+~/.netifera||pentest logs|:data
+~/.java/.userPrefs/burp||pentest logs|:data
+~/.java/.userPrefs/AttackLists/prefs.xml||pentest logs|:data
+~/.ZAP/config.xml||pentest logs|:text
+~/.filezilla/filezilla.xml||might contain credentials|:text
+~/.filezilla/recentservers.xml||might contain credentials|:text
+~/.ncftp/firewall||CONFGREP(/firewall-password\s*=\s*(.*)/)|:text
+~/.gftp/gftprc||might contain credentials|:text
+~/.gftp/bookmarks||might contain credentials|:text
+~/.mpdconf||CONFGREP(/password.*"(.*)"/)|:text
+~/.mpdconf||CONFGREP(/proxy_password.*"(.*)"/)|:text
+~/.remmina/remmina.pref||might contain credentials|:text
+~/.subversion/config||might contain credentials|:text
+~/.subversion/servers||might contain credentials|:text
+~/.config/gmpc/profiles.cfg||GREP(/password=\s*"(.*)"/)|:text
+~/.config/mc/ini||GREP(/password=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/telnet-password=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/rmtosd-password=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/sout-raop-password=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/sout-raop-password-file=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/lastfm-password=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/rtsp-pwd=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/ftp-pwd=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/smb-pwd=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/http-proxy-pwd=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/sout-rtsp-pwd=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/socks-pwd=\s*(.*)/)|:text
+~/.config/vlc/vlcrc||CONFGREP(/sout-http-pwd=\s*(.*)/)|:text
+~/.config/Last.fm/Last.fm.conf||GREP(/\\Password\s*=(.*)/)|:text
+~/.rootdpass||password|:text
+~/.gitconfig||git information|:text
+~/.airsnortrc|Airsort|:text
+~/.alias|Shell config|:text
+#~/.amsn|aMSN: interessting data?|:data
+#~/.ethereal|Sniffer data|:data
+~/.gnupg/secring.gpg|GnuPG key|:data
+#~/.keepass|Password manager|:data
+~/.nessusrc|Nessus config|:text
+~/.smb.cnf|Samba conf|:text
+~/~/.ecryptfs/wrapped-passphrase|wrap an eCryptfs mount passphrase|:text
+############################################################
+# Generic files
+############################################################
