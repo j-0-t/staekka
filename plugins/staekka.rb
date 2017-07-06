@@ -72,6 +72,11 @@ module Msf
           raise "No directory #{testpath}"
         end
       end
+
+      # fixing load issues
+      load_termios
+      load_minitar
+
       add_extra_gems_to_path
       require 'staekka'
       require 'base/sessions/pty'
@@ -109,6 +114,58 @@ module Msf
         end
       end
     end
+
+
+    # cut&paste from https://gist.github.com/krohrbaugh/956581
+    # Searches for the path of the specified gem, returning the lib path to the
+    # most recent version of the gem, or nil if no matching path is found.
+    def find_gem_path(name)
+      candidates = []
+
+      Gem.path.each do |path|
+        glob = File.join(path, 'gems/*')
+
+        Dir.glob(glob) do |entry|
+          basename = File.basename(entry)
+          gemname, sep, version = basename.rpartition('-')
+
+          if gemname == name
+            libdir = File.expand_path(File.join(entry, 'lib'))
+            class << libdir; attr_accessor(:gemname); attr_accessor(:version); end
+            libdir.gemname = gemname
+            libdir.version = version.scan(/\d+/).map {|digit| digit.to_i}
+            candidates.push(libdir)
+          end
+        end
+      end
+
+      candidates.sort! {|a, b| a.version <=> b.version}
+      candidates.last
+    end
+
+    # fixing load issues with termios
+    def load_termios
+      begin
+        require 'termios'
+      rescue LoadError => e
+        gem_path = find_gem_path("termios")
+        $LOAD_PATH.unshift(gem_path) unless gem_path.nil?
+        require 'termios'
+      end
+    end
+
+     # fixing load issues with minitar
+    def load_minitar
+      begin
+        require 'minitar'
+      rescue LoadError => e
+        gem_path = find_gem_path("minitar")
+        $LOAD_PATH.unshift(gem_path) unless gem_path.nil?
+        require 'termios'
+      end
+    end
+
+
 
     #
     # searches for custom used gems and adds gems path to LOAD_PATH

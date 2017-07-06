@@ -168,7 +168,9 @@
 #~/.keepass|Password manager|:data
 ~/.nessusrc|Nessus config|:text
 ~/.smb.cnf|Samba conf|:text
-~/~/.ecryptfs/wrapped-passphrase|wrap an eCryptfs mount passphrase|:text
+~/.ecryptfs/wrapped-passphrase|wrap an eCryptfs mount passphrase|:text
 ############################################################
 # Generic files
 ############################################################
+/tmp/krb5cc_*|Kerberos tickets|:text
+/tmp/krb5.keytab|Kerberos tickets|:text

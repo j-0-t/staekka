@@ -35,7 +35,7 @@ cp  $STAEKKA_PATH/plugins/info_path.rb $HOME/.msf4/plugins/
 Installation of dependencies (gem installation without root required)
 ```
 gem install --user bindata
-gem install --user archive-tar-minitar
+gem install --user minitar
 gem install --user ruby-termios
 ```
 
@@ -93,7 +93,13 @@ msf auxiliary(interactive) > info
 Stækka: Icelandic word for (enlarge/expand/grow).
 This plugin extends Metasploit for some features.
 
-
+# Bugs
+## Ruby/Readline ##
+Sometimes msfconsole shows "\r"
+Fix: Use the system Readline library instead of RbReadline
+```
+msfconsole -L
+```
 
 
 

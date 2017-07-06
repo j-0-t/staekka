@@ -31,7 +31,8 @@ class MetasploitModule < Msf::Post
   def run
     rootdir = '/'
     updatedb_file = nil
-    staekka_path  = ENV['STAEKKA_TEST']
+    #staekka_path  = ENV['STAEKKA_TEST']
+    staekka_path = Msf::Config.staekka_path
     if datastore['TESTMODE'] == true
       updatedb_file = staekka_path + "/data/files/updatedb-2"
       unless ::File.file? updatedb_file

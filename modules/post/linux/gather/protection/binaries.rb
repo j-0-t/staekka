@@ -13,7 +13,7 @@ require 'core/post/unix/commands'
 require 'msf/core/post/common'
 require 'core/post/staekka/file'
 require 'core/post/staekka/unix'
-require 'staekka_path'
+#require 'staekka_path'
 
 class MetasploitModule < Msf::Post
   include Msf::Post::Common

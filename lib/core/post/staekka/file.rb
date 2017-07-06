@@ -3,7 +3,8 @@
 
 # include minitar
 #require ::File.dirname(__FILE__) + '/../../../../' + 'external/archive-tar-minitar/lib/archive/tar/minitar'
-require 'archive/tar/minitar'
+#require 'archive/tar/minitar'
+require 'minitar'
 require 'core/post/staekka'
 
 

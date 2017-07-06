@@ -7,7 +7,7 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    archive-tar-minitar (0.5.2)
+    minitar (0.6.1)
     bindata (2.3.4)
 
 PLATFORMS
