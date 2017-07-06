@@ -120,6 +120,14 @@ module Msf
     # Searches for the path of the specified gem, returning the lib path to the
     # most recent version of the gem, or nil if no matching path is found.
     def find_gem_path(name)
+      unless Gem.default_path == Gem.path
+        vendor_path = File.expand_path(File.join(Msf::Config.staekka_path, 'vendor', 'bundle', 'ruby', RbConfig::CONFIG['ruby_version']))
+        if File.directory? vendor_path
+            unless Gem.path.include? vendor_path
+                Gem.path << vendor_path
+            end
+        end
+      end
       candidates = []
 
       Gem.path.each do |path|
@@ -149,7 +157,14 @@ module Msf
         require 'termios'
       rescue LoadError => e
         gem_path = find_gem_path("termios")
-        $LOAD_PATH.unshift(gem_path) unless gem_path.nil?
+        unless gem_path.nil?
+          $LOAD_PATH.unshift(gem_path)
+        else
+          gem_path = find_gem_path("ruby-termios")
+          unless  gem_path.nil?
+            $LOAD_PATH.unshift(gem_path)
+          end
+        end
         require 'termios'
       end
     end
