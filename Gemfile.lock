@@ -1,22 +1,17 @@
-GIT
-  remote: https://github.com/arika/ruby-termios
-  revision: 061a2c4d5ef649928c3e6ab308383b2b6d98b1ab
-  specs:
-    ruby-termios (1.0.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
+    bindata (2.4.0)
     minitar (0.6.1)
-    bindata (2.3.4)
+    ruby-termios (1.0.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  archive-tar-minitar
   bindata
-  ruby-termios!
+  minitar
+  ruby-termios
 
 BUNDLED WITH
-   1.13.6
+   1.15.1
