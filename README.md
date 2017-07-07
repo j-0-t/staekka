@@ -48,7 +48,7 @@ bundle install
 
 # Usage
 
-``
+```
 $ export STAEKKA_PATH=$HOME/.staekka/
 $ cd ../metasploit-framework/
 $ ./msfconsole
