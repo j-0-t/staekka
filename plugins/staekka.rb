@@ -30,7 +30,7 @@ module Msf
         end
       else
         # check default path
-        if ::File.directory? ENV['STAEKKA_PATH']
+        if ::File.directory? ENV['STAEKKA_PATH'].to_s
             @staekka_path = ENV['STAEKKA_PATH']
         else
           [ "#{ENV['HOME']}/.staekka", "/usr/local/staekka", "/opt/staekka"].each do |dir|
@@ -56,7 +56,7 @@ module Msf
         $LOAD_PATH << "test/lib"
         if opts['Testdir']
           testpath = opts['Testdir']
-        elsif ::File.file? "#{ENV['STAEKKA_TEST']}/lib/modules_test_extra.rb"
+        elsif ::File.file? "#{ENV['STAEKKA_TEST'].to_s}/lib/modules_test_extra.rb"
           testpath = "#{ENV['STAEKKA_TEST']}/"
         elsif ::File.file? "#{@staekka_path}/test/lib/modules_test_extra.rb"
           testpath = "#{@staekka_path}/test"
