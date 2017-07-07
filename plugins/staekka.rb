@@ -33,7 +33,7 @@ module Msf
         if ::File.directory? ENV['STAEKKA_PATH'].to_s
             @staekka_path = ENV['STAEKKA_PATH']
         else
-          [ "#{ENV['HOME']}/.staekka", "/usr/local/staekka", "/opt/staekka"].each do |dir|
+          [ "#{ENV['HOME']}/.staekka", "/usr/local/staekka", "/opt/staekka", "/usr/share/staekka"].each do |dir|
             if ::File.directory? dir
               @staekka_path = dir
               break
