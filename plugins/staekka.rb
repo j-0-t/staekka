@@ -120,7 +120,7 @@ module Msf
     # Searches for the path of the specified gem, returning the lib path to the
     # most recent version of the gem, or nil if no matching path is found.
     def find_gem_path(name)
-      unless Gem.default_path == Gem.path
+      if (Gem.default_path != Gem.path) and (Gem.path.length == 1)  # Only metasploit vendor path is given
         vendor_path = File.expand_path(File.join(Msf::Config.staekka_path, 'vendor', 'bundle', 'ruby', RbConfig::CONFIG['ruby_version']))
         if File.directory? vendor_path
             unless Gem.path.include? vendor_path
